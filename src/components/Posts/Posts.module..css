@@ -1,0 +1,19 @@
+.content {
+    grid-area: d-content;
+}
+
+.content a {
+    color: darkseagreen;
+    position:absolute;
+    margin-top:1%;
+    height:54px;
+}
+
+.content img {
+    width: 700px;
+    height: 300px;
+}
+
+.elements {
+    padding: 10px;
+}

@@ -1,0 +1,9 @@
+.logo {
+    grid-area: d-logo;
+    background-color: aqua;
+}
+
+.logo img {
+    width: 120px;
+    background-color: bisque;
+}

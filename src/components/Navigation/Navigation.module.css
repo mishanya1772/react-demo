@@ -1,0 +1,13 @@
+.navigation {
+    grid-area: d-navigation;
+    background-color: lavenderblush;
+    padding: 20px;
+}
+
+.item a{
+    text-decoration: none;
+}
+
+.item a.active {
+    color: gold;
+}
