@@ -13,7 +13,11 @@ const App = (props) => {
         <Navigation/>
         <div>
           <Route path='/profile' render={() => <Dialog state={props.state}/>}/>
-          <Route path='/message' component={Posts}/>
+          <Route path='/message' render={() => <Posts
+            state={props.state}
+            dispatch={props.dispatch}
+          />
+          }/>
         </div>
       </div>
     </BrowserRouter>

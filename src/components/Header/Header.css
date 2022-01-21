@@ -1,9 +1,10 @@
 .logo {
     grid-area: d-logo;
-    background-color: aqua;
+    background-color: #C6BEEE;
+    padding: 10px;
 }
 
 .logo img {
-    width: 120px;
-    background-color: bisque;
+    width: 100px;
+    padding: 10px;
 }

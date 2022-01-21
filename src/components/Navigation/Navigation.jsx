@@ -4,12 +4,14 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   return <nav className={component.navigation}>
-    <div className={component.item}>
-      <NavLink to="/profile" activeClassName={component.active}>Profile</NavLink>
-    </div>
-    <div className={component.item}>
-      <NavLink to="/message" activeClassName={component.active}>Message</NavLink>
-    </div>
+    <h3>
+      <div className={component.item}>
+        <NavLink to="/profile" activeClassName={component.active} data-id='profile'>Profile</NavLink>
+      </div>
+      <div className={component.item}>
+        <NavLink to="/message" data-id='message' activeClassName={component.active}>Message</NavLink>
+      </div>
+    </h3>
   </nav>;
 };
 

@@ -1,9 +1,16 @@
 import classes from './Posts.module..css';
 import React from 'react';
+import { newPost, updateFieldState } from '../../redux/new-post-reducer';
 
 const Posts = (props) => {
-  let postData = React.createRef();
-  const addedPost = () => alert(postData.current.value);
+  let newPostData = React.createRef();
+  const posts = props.state.posts.content.map(item => <div data-id='post'>{item}</div>);
+
+  const addedPost = () => props.dispatch(newPost(newPostData.current.value));
+  const onPostChange = () => {
+    let text = newPostData.current.value;
+    props.dispatch(updateFieldState(text));
+  };
 
   return <div className="content">
     <div className="background">
@@ -12,13 +19,15 @@ const Posts = (props) => {
     <div className='elements'>
       <h3>My posts</h3>
       <div>
-        <textarea ref={postData}></textarea>
+        <textarea ref={newPostData} onChange={onPostChange} value={props.state.posts.fieldState} data-id='field'/>
       </div>
       <div>
-        <button onClick={addedPost}>Add post</button>
+        <button style={{ backgroundColor: props.state.posts.buttonColor }} onClick={addedPost} data-id='addPost'>Add
+          post
+        </button>
       </div>
       <div className={classes.item}>
-        <a>test post.. </a>
+        {posts}
       </div>
     </div>
   </div>;
